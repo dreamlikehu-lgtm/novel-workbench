@@ -1,0 +1,4 @@
+interface:
+  display_name: "中文小说工作台"
+  short_description: "结合专项写作、故事事实账本与审稿验收，支持长篇规划、连续写作和可靠续写"
+  default_prompt: "使用 $novel-workbench 规划并创作中文小说，按约定篇幅逐章写作、审稿并维护故事事实。"
