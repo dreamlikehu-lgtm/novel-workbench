@@ -1,5 +1,6 @@
 """Synthetic runtime regressions; these fixtures are not AI literary reviews."""
 import concurrent.futures
+from contextlib import closing
 import importlib.util
 import json
 from pathlib import Path
@@ -257,8 +258,9 @@ class LedgerTests(unittest.TestCase):
         self.stage()
         self.approve()
         self.commit()
-        with sqlite3.connect(self.book / ".novel" / "ledger.sqlite3") as db:
+        with closing(sqlite3.connect(self.book / ".novel" / "ledger.sqlite3")) as db:
             db.execute("UPDATE commits SET state='{}'")
+            db.commit()
         self.assertIn("state_mismatch", [i["type"] for i in self.status()["issues"]])
         self.cli("context", self.book, ok=False)
 
