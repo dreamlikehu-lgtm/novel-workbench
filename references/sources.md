@@ -12,6 +12,12 @@
 
 2026-11-03 查看时，首项目及MyNovel有MIT许可，webnovel-writer与MuMuAINovel为GPL-3.0；Chinese-WebNovel-Skill的v2根目录未找到LICENSE。以上为当时文件观察，不是对所有分支或素材许可的法律结论。因此首版采用独立代码与原创说明，避免直接拼接不同项目的实现和来源不明的小说语料。
 
+## 语言复查模块
+
+2026-11-07 阅读了躺在废墟里 Lieflat 关于中文写作特征实验的文章，以及 [lieflat-less-ai-tone](https://github.com/larashero3-dotcom/lieflat-less-ai-tone) 的公开研究与工作流。由此进一步关注诊断与修订分开、命中需要语境复核、修改需要回读验证的设计问题。本项目据小说任务独立编写 [语言复查规范](language-review.md)，将人物声音、叙述讲解、指称、句子负担与跨章重复接入原有表达审稿。
+
+该仓库的 [LICENSE](https://github.com/larashero3-dotcom/lieflat-less-ai-tone/blob/main/LICENSE) 标为 CC BY-NC 4.0，并要求商用授权联系作者。本模块的交付内容是本项目原创的小说检查说明，对方的完整规则文本、代码、研究图表和统计阈值另属来源项目。将来如需直接引入这些材料，应先核实适用许可与所需授权，并记录采用版本及材料来源。
+
 ## 首版边界
 
 - 接入宿主已有的模型和工具，不自带模型、不训练文风、不承诺同模型下成文效果必然更好。

@@ -93,6 +93,8 @@ python3 "$SKILL/scripts/novel.py" candidate "$BOOK" --chapter 1
 
 另一份报告 scope=craft。verdict=pass/fail；findings 条目需要 severity=blocking/advisory 和具体 message。有 blocking 时不得通过。报告 reviewer 字段仅作追踪，脚本不能证明其身份或独立性；不得伪造多人审稿。
 
+`craft` 报告同时记录 [小说语言复查](language-review.md)。在 `notes` 中说明阅读范围、实际问题和处理或保留依据；需要定位的建议写入 `findings`。这些内容由实际审读者完成。现有脚本验证报告与候选版本的关系，语言诊断由宿主审读执行。
+
 ```sh
 python3 "$SKILL/scripts/novel.py" review "$BOOK" --chapter 1 --file "$BOOK/reports/01-continuity.json"
 python3 "$SKILL/scripts/novel.py" review "$BOOK" --chapter 1 --file "$BOOK/reports/01-craft.json"
